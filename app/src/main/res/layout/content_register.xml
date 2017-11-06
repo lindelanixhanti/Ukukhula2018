@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="75dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    tools:context="za.co.codetribe.ukukhula.AdminProfile.ProfileActivity"
+    tools:showIn="@layout/content_register"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register form"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"/>
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/editText"-->
+        <!--android:hint="name"/>-->
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/editText2"-->
+        <!--android:hint="Surname"/>-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtEmail"
+        android:hint="Email Adress"/>
+
+    <!--<EditText-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/editText4"-->
+        <!--android:hint="Gender"/>-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtPassword"
+        android:hint="password"
+        />
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/group"
+
+        >
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/staff"
+        android:text="Staff"
+    android:layout_marginRight="100dp"
+        android:onClick="usertype"/>
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/parent"
+        android:text="Parent"
+        android:onClick="usertype"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:id="@+id/btnRegister"
+        android:layout_gravity="center_horizontal"
+        android:onClick="save"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:id="@+id/txtSign"
+        android:text="Already Registered? Sign in here"/>
+
+</LinearLayout>

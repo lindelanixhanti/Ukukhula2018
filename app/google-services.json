@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "273717898419",
+    "firebase_url": "https://ukukhula2.firebaseio.com",
+    "project_id": "ukukhula2",
+    "storage_bucket": "ukukhula2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273717898419:android:1642114ca46c30d6",
+        "android_client_info": {
+          "package_name": "za.co.codetribe.ukukhula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273717898419-e4mjvomjtknf0oma1ifmu20g0m48nvhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "za.co.codetribe.ukukhula",
+            "certificate_hash": "dbbdbe225d8a9aa0cc760677895790a2a2ef4558"
+          }
+        },
+        {
+          "client_id": "273717898419-lsknsntnffoubdtcujogh4ntq8rm1l0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs7SptdA999ZzR0U_sl18uAqzau45pzLo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273717898419-lsknsntnffoubdtcujogh4ntq8rm1l0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
