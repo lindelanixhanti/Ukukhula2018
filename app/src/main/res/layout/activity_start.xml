@@ -72,19 +72,6 @@
             android:textColor="#f16f7d"
             android:textSize="16sp" />
 
-        <Button
-            style="@style/Base.TextAppearance.AppCompat.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/login_button"
-            android:clickable="true"
-            android:onClick="loginAdmin"
-            android:padding="16dp"
-            android:text="Administrator Login"
-            android:textAllCaps="false"
-            android:textColor="#f16f7d"
-            android:textSize="16sp" />
 
         <Button
             style="@style/Base.TextAppearance.AppCompat.Body1"

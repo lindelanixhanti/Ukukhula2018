@@ -23,7 +23,11 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:layout_marginBottom="25dp"
+<<<<<<< HEAD
             android:src="@drawable/profile" />
+=======
+          />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,11 +74,19 @@
 
             <EditText
                 android:id="@+id/editClassName"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="textPersonName" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+                />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
             <TextView
                 android:layout_width="match_parent"
@@ -86,11 +98,19 @@
 
             <EditText
                 android:id="@+id/editsurname"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="textPersonName" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+              />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
 
 
@@ -104,11 +124,19 @@
 
             <EditText
                 android:id="@+id/editname"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="textPersonName" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+             />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
             <TextView
                 android:layout_width="match_parent"
@@ -120,11 +148,19 @@
 
             <EditText
                 android:id="@+id/editgender"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="textPersonName" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+              />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
             <TextView
                 android:layout_width="match_parent"
@@ -136,11 +172,19 @@
 
             <EditText
                 android:id="@+id/editdate"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="date" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+               />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
             <TextView
                 android:layout_width="match_parent"
@@ -152,11 +196,19 @@
 
             <EditText
                 android:id="@+id/editfavmeal"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
                 android:inputType="text" />
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+             />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
             <TextView
                 android:layout_width="match_parent"
@@ -171,7 +223,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
+<<<<<<< HEAD
                 android:background="@drawable/bkg"
+=======
+                android:background="@drawable/round"
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
                 android:inputType="text" />
 
 
@@ -194,10 +250,17 @@
 
             <EditText
                 android:id="@+id/editparentName"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
                 android:inputType="textPersonName" />
 
             <TextView
@@ -210,10 +273,17 @@
 
             <EditText
                 android:id="@+id/editContacts"
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
                 android:background="@drawable/bkg"
+=======
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:background="@drawable/round"
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
                 android:inputType="textPersonName" />
 
             <Button
@@ -222,7 +292,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:alpha="0.90"
+<<<<<<< HEAD
                 android:background="@drawable/gradient2"
+=======
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
                 android:onClick="Save"
                 android:padding="16dp"
                 android:text="SAVE"

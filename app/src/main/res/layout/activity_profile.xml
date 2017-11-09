@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="za.co.codetribe.kid.notifications.EventsActivity"
+
 >
 
     <!--<TextView-->
@@ -30,10 +31,9 @@
         android:id="@+id/imageButton"
         android:layout_width="110dp"
         android:layout_height="110dp"
+        android:src="@drawable/factfile"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:src="@drawable/factfile" />
+        android:layout_centerHorizontal="true" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -46,6 +46,15 @@
         android:layout_alignBottom="@+id/imageButton"
         android:layout_alignStart="@+id/imageButton"
         android:layout_marginStart="84dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin/Teacher"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
+
 
 
 
@@ -53,8 +62,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="150dp"
-        android:id="@+id/linearLayout4">
+        android:layout_marginTop="200dp"
+        android:id="@+id/linearLayout4"
+        >
 
         <ScrollView
             android:layout_width="match_parent"
@@ -63,11 +73,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="1">
 
-
-        <TextView
-
+<<<<<<< HEAD
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
@@ -78,23 +87,28 @@
             android:padding="8dp"
             android:hint="    CHILD DETAILS"
             android:background="#AD1457"/>
+=======
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
-        <EditText
+                <EditText
             android:id="@+id/editname"
-            android:layout_width="match_parent"
+            android:layout_width="386dp"
             android:layout_height="46dp"
-            android:textColor="#fff"
+
             android:ems="10"
+            android:background="@drawable/round"
             android:hint="   Name"
             android:textStyle="bold"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_weight="0.55" />
 
         <EditText
             android:id="@+id/editsurname"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:ems="10"
-            android:textColor="#fff"
+            android:background="@drawable/round"
+
             android:hint="   Surname"
             android:inputType="textPersonName" />
 
@@ -103,7 +117,8 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:ems="10"
-            android:textColor="#fff"
+            android:background="@drawable/round"
+
             android:inputType="textPersonName"
             android:hint="   Address" />
 
@@ -114,7 +129,8 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:ems="10"
-            android:textColor="#fff"
+            android:background="@drawable/round"
+
             android:inputType="textPersonName"
             android:hint="    Date of bith" />
 
@@ -126,7 +142,8 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:ems="10"
-            android:textColor="#fff"
+            android:background="@drawable/round"
+
             android:inputType="textPersonName"
             android:hint="     Parent cellphone number" />
 
@@ -135,25 +152,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="10"
-                    android:textColor="#fff"
+                    android:background="@drawable/round"
+
                     android:inputType="textPersonName"
                     android:hint="     Parent Email"
                     android:layout_marginBottom="20dp"/>
 
 
-                <Button
-                    android:id="@+id/saveData"
-                    android:layout_width="346dp"
-                    android:layout_height="wrap_content"
-                    android:background="#AD1457"
-                    android:onClick="save"
-                    android:text="UPDATE PROFILE"
-                    android:textColor="#fff"
+                <!--<Button-->
+                    <!--android:id="@+id/saveData"-->
+                    <!--android:layout_width="346dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#AD1457"-->
+                    <!--android:onClick="save"-->
+                    <!--android:text="UPDATE PROFILE"-->
+                    <!--android:textColor="#fff"-->
 
-                    android:layout_gravity="center_horizontal"
+                    <!--android:layout_gravity="center_horizontal"/>-->
 
 
-                    />
+                    <!--/>-->
 
                 <!--<Button-->
             <!--android:layout_width="match_parent"-->
@@ -166,5 +184,7 @@
 </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
+
 </RelativeLayout>
 

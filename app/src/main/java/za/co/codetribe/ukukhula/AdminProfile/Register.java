@@ -22,6 +22,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import za.co.codetribe.ukukhula.MainActivity;
 import za.co.codetribe.ukukhula.R;
@@ -34,13 +37,16 @@ public class Register extends AppCompatActivity {
     TextView text;
     EditText edtemail;
     EditText edtpassword;
-    RadioGroup user;
+
     RadioButton rb;
     Context context;
 
 
     private FirebaseAuth firebase;
+
     ProgressDialog progressDialog;
+    FirebaseAuth mAuth;
+    FirebaseUser user;
 
 
     @Override
@@ -58,6 +64,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.content_register);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        user = mAuth.getCurrentUser();
 
 
 
@@ -68,7 +75,7 @@ public class Register extends AppCompatActivity {
         edtpassword = (EditText) findViewById(R.id.edtPassword);
         text = (TextView) findViewById(R.id.txtSign);
 
-        user=(RadioGroup)findViewById(R.id.group);
+
 
         firebase = FirebaseAuth.getInstance();
 
@@ -80,7 +87,7 @@ public class Register extends AppCompatActivity {
 
         registerUser();
 
-        //popup dialog
+        //popup dialogne3y
 
 
 
@@ -108,7 +115,11 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
+
+
                         if (task.isSuccessful()) {
+
+
                             Toast.makeText(getApplicationContext(), "User successful registered ", Toast.LENGTH_LONG).show();
                             AlertDialog.Builder builder1 = new AlertDialog.Builder(Register.this);
                             builder1.setMessage("please update your personal details now or later?");
@@ -146,24 +157,10 @@ public class Register extends AppCompatActivity {
     }
 
 
-    public void usertype (View view)
-
-    {
-
-        int checkedid =user.getCheckedRadioButtonId();
-        rb= (RadioButton) findViewById(checkedid);
-
-        if (rb.getText().equals("sfaff"))
-        {
-            registerUser();
-        }
-        else if (rb.getText().equals(" parent"))
-        {
-            registerUser();
-        }
 
 
 
-    }
+
+
 }
 

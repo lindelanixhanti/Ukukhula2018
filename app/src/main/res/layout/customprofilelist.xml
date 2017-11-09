@@ -8,11 +8,19 @@ android:orientation="horizontal"
 tools:context="za.co.codetribe.kid.RegisterLearners"
 android:padding="10dp">
 
+<<<<<<< HEAD
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pic"
         android:layout_width="114dp"
         android:layout_height="wrap_content"
         android:src="@drawable/download4"/>
+=======
+    android:id="@+id/add"
+    android:orderInCategory="100"
+    android:title="ADD"
+    android:icon="@drawable/ic_add_black_24dp"
+    app:showAsAction="ifRoom" />
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -18,7 +18,11 @@
         android:id="@+id/imageHome"
         android:layout_width="120dp"
         android:layout_height="120dp"
+<<<<<<< HEAD
         android:src="@drawable/profile"
+=======
+
+>>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
         android:elevation="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
