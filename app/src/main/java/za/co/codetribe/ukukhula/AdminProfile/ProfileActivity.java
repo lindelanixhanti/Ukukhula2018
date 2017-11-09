@@ -232,55 +232,7 @@ public class ProfileActivity extends AppCompatActivity {
                     });
         }
     }
-//PROFILE\
-    /*
-    public  void saveProfile() {
-        final String nam, surnam, addres, gende, parentNam, parentContac, dateofbirt;
 
-        nam = name.getText().toString().trim();
-        surnam = surname.getText().toString().trim();
-        addres = address.getText().toString();
-        gende = gender.getText().toString();
-        parentNam = parentName.getText().toString();
-        parentContac = parentContact.getText().toString();
-        dateofbirt = dateofbirth.getText().toString();
-
-        if (!TextUtils.isEmpty((nam)) && !TextUtils.isEmpty((surnam)) && !TextUtils.isEmpty((addres)) && !TextUtils.isEmpty((gende)) && !TextUtils.isEmpty((parentNam)) && !TextUtils.isEmpty((parentContac)) && !TextUtils.isEmpty((dateofbirt))) {
-            if (imageUri != null) {
-                StorageReference mChildstorage = mStorageRef.child(("user_profile")).child(imageUri.getLastPathSegment());
-                String profileUri = imageUri.getLastPathSegment();
-
-
-                mChildstorage.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                        final Uri uri=taskSnapshot.getDownloadUrl();
-
-                        userDatabase.child("name").setValue(nam);
-                        userDatabase.child("surname").setValue(surnam);
-
-                        userDatabase.child("adress").setValue(addres);
-
-                        userDatabase.child("gender").setValue(gende);
-
-                        userDatabase.child("parentName").setValue(parentNam);
-
-                        userDatabase.child("parentContact").setValue(dateofbirt);
-
-                        userDatabase.child("userid").setValue(mAuth.getCurrentUser().getUid());
-                        userDatabase.child("imsageUri").setValue(imageUri.toString());
-
-
-
-                    }
-                });
-
-            }
-
-        }
-    }
-*/
 //to save extra info using current user id
 
     private void addLearners() {
@@ -349,13 +301,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
-    //BACK ARROW
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        finish();
-//        return super.onOptionsItemSelected(item);
-//    }
 }
 
 

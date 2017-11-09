@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import za.co.codetribe.ukukhula.AdminProfile.ProfileActivity;
+import za.co.codetribe.ukukhula.Children.Profile1Activity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -89,11 +90,18 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_AddStaff) {
+        } else if (id == R.id.nav_school) {
+
+        } else if (id == R.id.nav_teacher) {
 
         } else if (id == R.id.nav_Children) {
-
+            Intent i = new Intent(MainActivity.this, Profile1Activity.class);
+            startActivity(i);
         } else if (id == R.id.nav_notifications) {
+
+        } else if (id == R.id.nav_Contacts) {
+
+        } else if (id == R.id.logout) {
 
         }
 

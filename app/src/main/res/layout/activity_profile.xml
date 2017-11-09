@@ -73,7 +73,7 @@
             android:ems="10"
             android:layout_gravity="center"
             android:inputType="textPersonName"
-            android:textColor="#FFFFF"
+            android:textColor="#FFFFFF"
             android:gravity=""
             android:padding="8dp"
             android:hint="    CHILD DETAILS"
