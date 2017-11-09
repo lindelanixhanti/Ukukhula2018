@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal"
+tools:context="za.co.codetribe.kid.RegisterLearners"
+android:padding="10dp">
+
+    android:id="@+id/add"
+    android:orderInCategory="100"
+    android:title="ADD"
+    android:icon="@drawable/ic_add_black_24dp"
+    app:showAsAction="ifRoom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+<TextView
+    style="@style/Base.TextAppearance.AppCompat.Body2"
+    android:id="@+id/profileName"
+    android:textSize="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="ejjhhh"
+
+    />
+
+<TextView
+    android:id="@+id/profileDob"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20dp"
+    android:hint="ejjhhh"
+    />
+</LinearLayout>
+    </LinearLayout>

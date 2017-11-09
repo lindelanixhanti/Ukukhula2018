@@ -9,6 +9,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,7 +49,7 @@ import za.co.codetribe.ukukhula.R;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    EditText name, surname, address, gender, parentName, parentContact, dateofbirth, parentEmail;
+    EditText name, surname, address, gender, parentName, parentContact, dateofbirth, parentEmail ,type;
     String nam, surnam, addres, gende, parentNam, parentContac, dateofbirt, email;
     Button save;
     CircleImageView profilePic;
@@ -56,7 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     //authntification fields
 
-    DatabaseReference roofdef, demodef,mDatabase;
+    DatabaseReference mDatabase;
     FirebaseAuth mAuth;
     FirebaseUser user;
     // FirebaseAuth.AuthStateListener mAuthListerner;
@@ -86,31 +88,13 @@ public class ProfileActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-//        mAuthListerner=new FirebaseAuth.AuthStateListener() {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 //
-//                FirebaseUser user= firebaseAuth.getCurrentUser();
-//                if(user!=null)
-//                {
-//                    finish();
-//                    Intent moveToHoe=new Intent(ProfileActivity.this,HomeActivity.class);
-//                    startActivity(moveToHoe);
-//                }
-//            }
-//        };
-
-        //ASSIGN FIREBASE DATABASE INSTANCES
-//        userDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
-
         storageReference = FirebaseStorage.getInstance().getReference();
 
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 //
-        //IMAGES
-//        profilePic=(ImageView)findViewById(R.id.imageButton);
-//        upload=(FloatingActionButton)findViewById(floatingActionButton);
+
 
 
         //ASSING  ID S
@@ -140,7 +124,7 @@ public class ProfileActivity extends AppCompatActivity {
                 displayProfilePic(parent_url);
             }
 
-            //ParentProfile parentProfile =
+            //LearnerProfile parentProfile =
             parentEmail.setText(user.getEmail());
 
 
@@ -184,27 +168,19 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addLearners();
-
-                Toast.makeText(ProfileActivity.this, " data is saving", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-
-
-        });
-
-//        view.setOnClickListener(new View.OnClickListener() {
+//        save.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View view) {
+//            public void onClick(View v) {
+//                addLearners();
 //
-//                Intent intent = new Intent(ProfileActivity.this, ViewProfileActivity.class);
+//                Toast.makeText(RegisterLearner.this, " data is saving", Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent(RegisterLearner.this, MainActivity.class);
 //                startActivity(intent);
 //            }
+//
+//
 //        });
+
 
 
     }
@@ -232,55 +208,7 @@ public class ProfileActivity extends AppCompatActivity {
                     });
         }
     }
-//PROFILE\
-    /*
-    public  void saveProfile() {
-        final String nam, surnam, addres, gende, parentNam, parentContac, dateofbirt;
 
-        nam = name.getText().toString().trim();
-        surnam = surname.getText().toString().trim();
-        addres = address.getText().toString();
-        gende = gender.getText().toString();
-        parentNam = parentName.getText().toString();
-        parentContac = parentContact.getText().toString();
-        dateofbirt = dateofbirth.getText().toString();
-
-        if (!TextUtils.isEmpty((nam)) && !TextUtils.isEmpty((surnam)) && !TextUtils.isEmpty((addres)) && !TextUtils.isEmpty((gende)) && !TextUtils.isEmpty((parentNam)) && !TextUtils.isEmpty((parentContac)) && !TextUtils.isEmpty((dateofbirt))) {
-            if (imageUri != null) {
-                StorageReference mChildstorage = mStorageRef.child(("user_profile")).child(imageUri.getLastPathSegment());
-                String profileUri = imageUri.getLastPathSegment();
-
-
-                mChildstorage.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                        final Uri uri=taskSnapshot.getDownloadUrl();
-
-                        userDatabase.child("name").setValue(nam);
-                        userDatabase.child("surname").setValue(surnam);
-
-                        userDatabase.child("adress").setValue(addres);
-
-                        userDatabase.child("gender").setValue(gende);
-
-                        userDatabase.child("parentName").setValue(parentNam);
-
-                        userDatabase.child("parentContact").setValue(dateofbirt);
-
-                        userDatabase.child("userid").setValue(mAuth.getCurrentUser().getUid());
-                        userDatabase.child("imsageUri").setValue(imageUri.toString());
-
-
-
-                    }
-                });
-
-            }
-
-        }
-    }
-*/
 //to save extra info using current user id
 
     private void addLearners() {
@@ -292,8 +220,9 @@ public class ProfileActivity extends AppCompatActivity {
             addres = address.getText().toString();
             parentContac = parentContact.getText().toString();
             dateofbirt = dateofbirth.getText().toString();
+            String type = "admin";
 
-            ParentProfile parentProfile = new ParentProfile(nam, surnam, parentContac, dateofbirt, addres);
+            ParentProfile parentProfile = new ParentProfile(nam, surnam, parentContac, dateofbirt, addres,type);
             Map<String, Object> parentProfileValues = parentProfile.toMap();
             String userId = user.getUid();
             Map<String, Object> childUpdates = new HashMap<>();
@@ -349,13 +278,31 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
-    //BACK ARROW
+  //  BACK ARROW
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        finish();
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId() )
+        {
+            case R.id.done:
+                addLearners();
+                Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
+                startActivity(intent);
+
+        }
+        finish();
+        return super.onOptionsItemSelected(item);
+    }
+
+    //menu
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 }
 
 

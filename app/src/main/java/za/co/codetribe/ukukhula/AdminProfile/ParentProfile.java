@@ -16,6 +16,7 @@ public class ParentProfile {
     private String contact_number;
     private String date_of_birth;
     private String address;
+    String type;
 
     // Children but will add it later once we have the right structure
 
@@ -23,12 +24,22 @@ public class ParentProfile {
     public ParentProfile() {
     }
 
-    public ParentProfile(String names, String surname, String contact_number, String date_of_birth, String address) {
+
+    public ParentProfile(String names, String surname, String contact_number, String date_of_birth, String address,String type) {
         this.names = names;
         this.surname = surname;
         this.contact_number = contact_number;
         this.date_of_birth = date_of_birth;
         this.address = address;
+        this.type=type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getNames() {
@@ -79,6 +90,7 @@ public class ParentProfile {
         result.put("contact_number", contact_number);
         result.put("date_of_birth", date_of_birth);
         result.put("address", address);
+        result.put("type",type);
         return result;
     }
 }

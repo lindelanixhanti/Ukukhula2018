@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".StartActivity"
-            android:label="@string/app_name"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_staff"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AdminProfile.ProfileActivity"></activity>
-        <activity android:name=".AdminProfile.Register"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AdminProfile.ProfileActivity" />
+        <activity android:name=".AdminProfile.Register" />
+        <activity android:name=".StartActivity" />
+        <activity android:name=".notifications.Eventhelper" />
+
+        <activity android:name=".learner.LearnrsActivity" />
+        <activity android:name=".Teacher.TeachersActivity"></activity>
+        <activity android:name=".learner.RegisterLearner"></activity>
     </application>
 
 </manifest>

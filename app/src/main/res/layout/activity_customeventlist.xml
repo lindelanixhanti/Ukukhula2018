@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="za.co.codetribe.kid.notifications.EventsActivity"
+    android:padding="10dp"
+    >
+
+    <TextView
+       style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:id="@+id/eventName"
+        android:textSize="20dp"
+        android:background="#cfd8dc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ejjhhh"
+
+    />
+
+    <TextView
+        android:id="@+id/eventDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cfd8dc"
+        android:hint="ejjhhh"
+        />
+    <TextView
+        android:id="@+id/eventDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cfd8dc"
+        android:hint="ejjhhh"
+        />
+    <!--<DatePicker-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="92dp"-->
+        <!--android:id="@+id/datePicer">-->
+
+    <!--</DatePicker>-->
+
+
+</LinearLayout>
