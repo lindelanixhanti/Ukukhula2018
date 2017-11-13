@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--android:id="@+id/linearLayout5">-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/linearLayout5"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="22dp"
+                android:text="Register Your School"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"
+                />
+
+            <EditText
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:hint=" Year"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/year"
+                android:paddingLeft="20dp"
+                android:background="@drawable/round"
+                android:textSize="20dp"/>
+
+
+            <EditText
+                android:id="@+id/school_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:hint=" School name"
+                android:background="@drawable/round"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/schoollllllll"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/school_address"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:background="@drawable/round"
+                android:hint="School address"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/addressssss"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"/>
+
+
+            <EditText
+                android:id="@+id/school_manager"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:background="@drawable/round"
+                android:hint="School Manager"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/managerrrr"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"/>
+
+
+            <EditText
+                android:id="@+id/contact_details"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:hint="Contact details"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/contact_numberrrrr"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/emal_address"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="11dp"
+                android:drawablePadding="20dp"
+                android:background="@drawable/round"
+                android:hint="Email address"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/emailllll"
+                android:paddingLeft="20dp"
+                android:textSize="20dp"/>
+
+
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="11dp"
+                android:text="Save"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="0.29" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+
+    <!--style="@android:style/TextAppearance.Medium.Inverse"-->

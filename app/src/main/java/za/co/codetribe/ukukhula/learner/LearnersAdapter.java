@@ -61,6 +61,7 @@ public class LearnersAdapter extends ArrayAdapter<LearnerProfile> {
 
 
         TextView eName=(TextView)convertView.findViewById(R.id.profileName);
+        TextView eSurname=(TextView)convertView.findViewById(R.id.profilesurname);
         TextView eDescription=(TextView)convertView.findViewById(R.id.profileDob);
 //        ImageView ePic = (ImageView)convertView.findViewById(R.id.pic);
 //        TextView eName=(TextView)convertView.findViewById(R.id.eventName);
@@ -78,6 +79,7 @@ public class LearnersAdapter extends ArrayAdapter<LearnerProfile> {
 //        eName.setText(profList.getChildsAge());
         eDescription.setText(profList.getNames());
         eName.setText(profList.getClassName());
+        eSurname.setText(profList.getSurname());
 
 //        eName.setText(profList.getChildsAddress());
 //        eName.setText(profList.getChildsAllergies());

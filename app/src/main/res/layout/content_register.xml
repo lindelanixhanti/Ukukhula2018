@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:text="Register form"
         android:id="@+id/textView2"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center_horizontal"
         android:textSize="25dp"/>
 
@@ -35,8 +37,10 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:id="@+id/edtEmail"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round"
         android:hint="Email Adress"/>
 
     <!--<EditText-->
@@ -47,35 +51,15 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/edtPassword"
+        android:layout_height="45dp"
         android:hint="password"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round"
         />
 
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/group"
 
-        >
-
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/staff"
-        android:text="Staff"
-    android:layout_marginRight="100dp"
-        android:onClick="usertype"/>
-
-    <RadioButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/parent"
-        android:text="Parent"
-        android:onClick="usertype"/>
-    </RadioGroup>
 
     <Button
         android:layout_width="match_parent"

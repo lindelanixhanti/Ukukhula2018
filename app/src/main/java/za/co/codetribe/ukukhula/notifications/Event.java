@@ -1,12 +1,14 @@
 package za.co.codetribe.ukukhula.notifications;
 
+import za.co.codetribe.ukukhula.Groups.Group;
+
 import static android.R.attr.data;
 
 /**
  * Created by Codetribe on 2017/09/01.
  */
 
-public class Event {
+public class Event extends Group {
 
 
         private String eventName;

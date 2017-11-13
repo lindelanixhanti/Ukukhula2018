@@ -1,6 +1,7 @@
 package za.co.codetribe.ukukhula.notifications;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ import java.util.List;
 
 
 import za.co.codetribe.ukukhula.R;
+import za.co.codetribe.ukukhula.gallery.GallaryActivity;
+import za.co.codetribe.ukukhula.gallery.ImageDisplayActivity;
 
 import static android.app.DatePickerDialog.*;
 
@@ -74,10 +77,10 @@ public class Eventhelper extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+                return super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
+        }
 
-    }
 
 
     @Override

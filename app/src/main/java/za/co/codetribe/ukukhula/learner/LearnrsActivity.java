@@ -47,6 +47,8 @@ public class LearnrsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profilekid);
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listview = (ListView) findViewById(R.id.listView);

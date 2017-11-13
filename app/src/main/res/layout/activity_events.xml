@@ -4,25 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="za.co.codetribe.kid.notifications.EventsActivity"
+    tools:context="za.co.codetribe.ukukhula.notifications.Eventhelper"
 
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/factfile" />
 
-    <ImageView
-        android:id="@+id/imageHome"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:elevation="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,6 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
             android:weightSum="1">
 
             <TextView
@@ -54,7 +42,8 @@
             android:layout_height="47dp"
             android:background="@drawable/round"
             android:layout_below="@+id/imageView3"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+          />
 
             <TextView
                 android:text="   Event description"
@@ -66,14 +55,15 @@
                 android:layout_alignParentStart="true"
 
                 android:layout_weight="2.30" />
+
             <EditText
                 android:id="@+id/eventDescription"
                 android:layout_width="match_parent"
                 android:layout_height="143dp"
                 android:layout_alignParentStart="true"
-                android:background="@drawable/round"
                 android:layout_below="@+id/eventName"
-             />
+                android:background="@drawable/round" />
+
             <TextView
                 android:id="@+id/date"
                 android:layout_width="match_parent"
@@ -104,7 +94,7 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="wrap_content"
-                android:background="#cfd8dc"
+                android:background="@drawable/round"
                 android:layout_height="300dp"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/eventDescription">

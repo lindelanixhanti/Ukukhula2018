@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.co.codetribe.ukukhula.notifications.Eventhelper"
+
+    android:orientation="vertical">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/scrollView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:weightSum="1">
+
+            <TextView
+                android:text="   Group Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center_horizontal"
+                android:layout_alignParentStart="true"
+
+                android:layout_weight="2.30" />
+        <EditText
+            android:id="@+id/gName"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@drawable/round"
+            android:layout_below="@+id/imageView3"
+            android:layout_alignParentStart="true"
+          />
+
+            <TextView
+                android:text="   Group Teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center_horizontal"
+                android:layout_alignParentStart="true"
+
+                android:layout_weight="2.30" />
+
+            <EditText
+                android:id="@+id/gTeachers"
+                android:layout_width="match_parent"
+                android:layout_height="143dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/eventName"
+                android:background="@drawable/round" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/saveData"
+                android:textColor="#fff"
+                android:text="ADD EVENTS"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  Current Events"
+                android:gravity="left"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/imageView3"
+                android:layout_alignParentStart="true" />
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="wrap_content"
+                android:background="@drawable/round"
+                android:layout_height="300dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/eventDescription">
+
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:paddingLeft="22dp"
+        android:text=" Events    "
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_above="@+id/scrollView3"
+        android:layout_alignStart="@+id/imageHome" />
+</RelativeLayout>

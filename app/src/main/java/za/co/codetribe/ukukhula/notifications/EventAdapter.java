@@ -63,7 +63,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
             TextView eName=(TextView)convertView.findViewById(R.id.eventName);
             TextView eDescription=(TextView)convertView.findViewById(R.id.eventDescription);
-            TextView eDate=(TextView)convertView.findViewById(R.id.eventDate);
+            TextView eDate=(TextView)convertView.findViewById(R.id.datePicer);
 
             final Event event=this.getItem(position);
 

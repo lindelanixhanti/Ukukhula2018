@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+ >
+
+
+        <TextView
+            android:text="   Group Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:layout_alignParentStart="true"
+
+    />
+        <EditText
+            android:id="@+id/gName"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@drawable/round"
+            android:layout_below="@+id/imageView3"
+            android:layout_alignParentStart="true"
+            />
+
+        <TextView
+            android:text="   Group Teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:layout_alignParentStart="true"
+            />
+
+        <EditText
+            android:id="@+id/gTeachers"
+            android:layout_width="match_parent"
+            android:layout_height="143dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/eventName"
+            android:background="@drawable/round" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:onClick="save"/>
+    </LinearLayout>

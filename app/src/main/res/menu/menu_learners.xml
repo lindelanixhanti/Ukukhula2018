@@ -5,7 +5,7 @@
         android:id="@+id/add"
         android:orderInCategory="100"
         android:title="ADD"
-        android:icon="@drawable/ic_add_black_24dp"
+        android:icon="@drawable/white_adds"
         app:showAsAction="ifRoom" />
 
 </menu>

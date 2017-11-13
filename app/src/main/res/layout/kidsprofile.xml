@@ -6,36 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="za.co.codetribe.kid.ProfileActivity"
     >
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="105dp"
-        android:layout_marginBottom="14dp"
-        android:background="@drawable/factfile">
+        android:layout_marginBottom="14dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profilepicture"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:layout_marginBottom="25dp"
-          />
+            android:gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/profilepicture"
             android:layout_gravity="start"
             android:paddingLeft="22dp"
             android:text=" Fact File    "
-            android:textSize="20dp"
             android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/profilepicture" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

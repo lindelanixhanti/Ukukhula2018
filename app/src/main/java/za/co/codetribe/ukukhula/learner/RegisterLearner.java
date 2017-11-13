@@ -1,6 +1,9 @@
 package za.co.codetribe.ukukhula.learner;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,9 +23,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Calendar;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 import za.co.codetribe.ukukhula.MainActivity;
 import za.co.codetribe.ukukhula.R;
+import za.co.codetribe.ukukhula.notifications.Eventhelper;
 
 
 public class RegisterLearner extends AppCompatActivity {
@@ -31,6 +38,7 @@ public class RegisterLearner extends AppCompatActivity {
 
     CircleImageView profilePic;
     ImageView profileImgPallete;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 
     //authntification fields
@@ -88,7 +96,32 @@ public class RegisterLearner extends AppCompatActivity {
         date_of_birth = (EditText) findViewById(R.id.editdate);
         favouriteMeal = (EditText) findViewById(R.id.editfavmeal);
 
+        //select date
+        date_of_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar= Calendar.getInstance();
+                int year=calendar.get(Calendar.YEAR);
+                int day=calendar.get(Calendar.DAY_OF_MONTH);
+                int month=calendar.get(Calendar.MONTH);
 
+                DatePickerDialog dialog= new DatePickerDialog(RegisterLearner.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,mDateSetListener,year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable((Color.TRANSPARENT)));
+                dialog.show();
+
+
+            }
+        });
+        mDateSetListener= new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int date) {
+
+                month=month+1;
+                String selected= month + "/" + date +"  " + year;
+
+                date_of_birth.setText(selected);
+            }
+        };
 //        user = mAuth.getCurrentUser();
 //
 //        //to add picture on storage
@@ -270,7 +303,7 @@ public class RegisterLearner extends AppCompatActivity {
         {
             case R.id.done:
                 addLearners();
-                Intent intent = new Intent(RegisterLearner.this,MainActivity.class);
+                Intent intent = new Intent(RegisterLearner.this,LearnrsActivity.class);
                 startActivity(intent);
 
         }
