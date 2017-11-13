@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/My_Profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title=" My Profile" />
+    <item
+        android:id="@+id/nav_school"
+        android:icon="@drawable/school"
+        android:title="School Details" />
+
+    <item
+        android:id="@+id/nav_teacher"
+        android:icon="@drawable/teacher"
+        android:title="Add Teacher" />
+    <item
+        android:id="@+id/nav_Children"
+        android:icon="@drawable/children"
+        android:title="Add Children" />
+    <item
+        android:id="@+id/nav_gallery"
+        android:icon="@drawable/ic_menu_gallery"
+        android:title="Gallery" />
+    <item
+        android:title="Notification"
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
         <item
             android:id="@+id/My_Profile"
             android:icon="@drawable/ic_person_black_24dp"
@@ -23,6 +49,21 @@
                  android:id="@+id/nav_notifications"
                 android:icon="@drawable/ic_notifications_black_24dp"
                 />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_Contacts"
+                android:icon="@drawable/contacts"
+                android:title="Contacts" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/logout"
+                android:title="Logout" />
+        </menu>
+    </item>
     <item android:title="School Details"
         android:id="@+id/nav_school_details"
         android:icon="@drawable/school"
