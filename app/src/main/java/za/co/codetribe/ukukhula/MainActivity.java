@@ -56,36 +56,30 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        listView=(ListView) findViewById(R.id.listImages);
+        listView = (ListView) findViewById(R.id.listImages);
 
-        imgList =new ArrayList<>();
+        imgList = new ArrayList<>();
 
-        pd =new ProgressDialog(this);
+        pd = new ProgressDialog(this);
         pd.setMessage(" please wait ....");
         pd.show();
 
-        databaseReference= FirebaseDatabase.getInstance().getReference("imagess");
+        databaseReference = FirebaseDatabase.getInstance().getReference("imagess");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 pd.dismiss();
 
-                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                {
-                    Log.i(" AVIWE",dataSnapshot.toString());
-                    ImagePojo imagePojo =(ImagePojo) dataSnapshot1.getValue(ImagePojo.class);
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    Log.i(" AVIWE", dataSnapshot.toString());
+                    ImagePojo imagePojo = (ImagePojo) dataSnapshot1.getValue(ImagePojo.class);
                     imgList.add(imagePojo);
 
                 }
 
 
-
-
-
-                ImageAdapter adapter = new ImageAdapter(MainActivity.this, R.layout.activity_gallarylist,imgList);
+                ImageAdapter adapter = new ImageAdapter(MainActivity.this, R.layout.activity_gallarylist, imgList);
                 listView.setAdapter(adapter);
-
-
 
 
             }
@@ -127,7 +121,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -150,36 +143,34 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.My_Profile) {
-            Intent intent= new Intent(MainActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            Intent intent= new Intent(MainActivity.this, ImageDisplayActivity.class);
+            Intent intent = new Intent(MainActivity.this, ImageDisplayActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_AddStaff) {
-            Intent intent= new Intent(MainActivity.this,TeacherActivity.class);
+            Intent intent = new Intent(MainActivity.this, TeacherActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_Children) {
-            Intent intent= new Intent(MainActivity.this,LearnrsActivity.class);
+            Intent intent = new Intent(MainActivity.this, LearnrsActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_notifications) {
-            Intent intent= new Intent(MainActivity.this, Eventhelper.class);
+            Intent intent = new Intent(MainActivity.this, Eventhelper.class);
             startActivity(intent);
 
-        }
-        else if (id == R.id.nav_school_details) {
-            Intent intent= new Intent(MainActivity.this, SchoolRegister.class);
+        } else if (id == R.id.nav_school_details) {
+            Intent intent = new Intent(MainActivity.this, SchoolRegister.class);
             startActivity(intent);
 
-        }  else if (id == R.id.nav_classes) {
-            Intent intent= new Intent(MainActivity.this, ClassesActivitys.class);
+        } else if (id == R.id.nav_classes) {
+            Intent intent = new Intent(MainActivity.this, ClassesActivitys.class);
             startActivity(intent);
 
-        }
-     else if (id == R.id.nav_logout) {
+        } else if (id == R.id.nav_logout) {
             Intent intent = new Intent(MainActivity.this, StartActivity.class);
             startActivity(intent);
 
