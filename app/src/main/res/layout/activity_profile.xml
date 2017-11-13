@@ -78,7 +78,7 @@
                 android:paddingRight="18dp"
                 android:weightSum="1">
 
-<<<<<<< HEAD
+<EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:ems="10"
@@ -89,8 +89,7 @@
             android:padding="8dp"
             android:hint="    CHILD DETAILS"
             android:background="#AD1457"/>
-=======
->>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
+
 
                 <EditText
             android:id="@+id/editname"

@@ -278,9 +278,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
-<<<<<<< HEAD
 
-=======
   //  BACK ARROW
 
     @Override
@@ -306,7 +304,7 @@ public class ProfileActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
->>>>>>> 12ecbe10ed3f07fe86a9fa450d3f017114f51a2e
+
 }
 
 

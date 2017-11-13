@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, ImageDisplayActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_AddStaff) {
+        } else if (id == R.id.nav_teacher) {
             Intent intent = new Intent(MainActivity.this, TeacherActivity.class);
             startActivity(intent);
 
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, Eventhelper.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_school_details) {
+        } else if (id == R.id.nav_school) {
             Intent intent = new Intent(MainActivity.this, SchoolRegister.class);
             startActivity(intent);
 
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, ClassesActivitys.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_logout) {
+        } else if (id == R.id.logout) {
             Intent intent = new Intent(MainActivity.this, StartActivity.class);
             startActivity(intent);
 
