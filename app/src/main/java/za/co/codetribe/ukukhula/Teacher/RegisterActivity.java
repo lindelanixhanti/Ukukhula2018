@@ -36,26 +36,22 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-import za.co.codetribe.ukukhula.Groups.ClassesActivitys;
-import za.co.codetribe.ukukhula.Groups.Group;
-import za.co.codetribe.ukukhula.Groups.GroupAdapter;
-import za.co.codetribe.ukukhula.MainActivity;
-import za.co.codetribe.ukukhula.R;
-import za.co.codetribe.ukukhula.gallery.GallaryActivity;
-import za.co.codetribe.ukukhula.gallery.ImageDisplayActivity;
 
-import static com.google.firebase.auth.FirebaseAuth.getInstance;
-import static za.co.codetribe.ukukhula.R.id.editContacts;
-import static za.co.codetribe.ukukhula.R.id.editParentC;
+import za.co.codetribe.ukukhula.Groups.Group;
+
+import za.co.codetribe.ukukhula.R;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
     //Variebles
-    private EditText Name, Surname, Email, password, Address, Contacts, Qualifications, Gender, IdNumber;
+    private EditText Name, Surname, Email, password, Address, Contacts, Qualifications,IdNumber;
     private Spinner className;
+    Spinner Gender;
 
     String userID;
 
@@ -84,7 +80,7 @@ public class RegisterActivity extends AppCompatActivity {
         // Name,Surname,Email,password,Address,Contacts,Qualifications,gender
         Name = (EditText) findViewById(R.id.editname);
         Surname = (EditText) findViewById(R.id.editsurname);
-        Gender = (EditText) findViewById(R.id.editgender);
+        Gender = (Spinner) findViewById(R.id.editgender);
         Address = (EditText) findViewById(R.id.editaddress);
         Contacts = (EditText) findViewById(R.id.editParentC);
         IdNumber = (EditText) findViewById(R.id.editIdNumber);
@@ -93,6 +89,15 @@ public class RegisterActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.editpassword);
 
         className = (Spinner) findViewById(R.id.className);
+
+//spinner gender
+
+        ArrayAdapter<CharSequence> adapter=  ArrayAdapter.createFromResource(this,R.array.gender,android.R.layout.simple_list_item_1);
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        Gender.setAdapter(adapter);
+
+
+
 
 
         progressDialog = new ProgressDialog(this);
@@ -319,7 +324,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             String idNumber = IdNumber.getText().toString();
                             String qualifications = Qualifications.getText().toString();
-                            String gender = Gender.getText().toString();
+                            String gender = Gender.getSelectedItem().toString();
 
                             if (className.getSelectedItemPosition() == 0) {
                                 // Do not allow to save

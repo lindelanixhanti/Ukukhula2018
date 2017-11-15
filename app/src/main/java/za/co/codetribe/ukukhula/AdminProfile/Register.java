@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +49,8 @@ public class Register extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser user;
 
+    String roletpe;
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -64,7 +67,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.content_register);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        user = mAuth.getCurrentUser();
+       // user = mAuth.getCurrentUser();
 
 
 
@@ -78,7 +81,12 @@ public class Register extends AppCompatActivity {
 
 
         firebase = FirebaseAuth.getInstance();
-
+//get intent Extra
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            roletpe = bundle.getString("Role");
+        }
+        Log.i("avo" ,roletpe);
 
     }
 
@@ -96,7 +104,7 @@ public class Register extends AppCompatActivity {
 
     public void registerUser() {
         String email = edtemail.getText().toString().trim();
-        String password = edtemail.getText().toString().trim();
+        String password = edtpassword.getText().toString().trim();
 
 
         if (TextUtils.isEmpty(email)) {
@@ -121,6 +129,7 @@ public class Register extends AppCompatActivity {
 
 
                             Toast.makeText(getApplicationContext(), "User successful registered ", Toast.LENGTH_LONG).show();
+
                             AlertDialog.Builder builder1 = new AlertDialog.Builder(Register.this);
                             builder1.setMessage("please update your personal details now or later?");
                             builder1.setCancelable(true);
@@ -129,8 +138,19 @@ public class Register extends AppCompatActivity {
                                     "now",
                                     new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
-                                            Intent intent = new Intent(Register.this, ProfileActivity.class);
-                                            startActivity(intent);
+                                            if(roletpe.equals("Parent")) {
+                                                String type="Parent";
+                                                Intent intent = new Intent(Register.this, ProfileActivity.class);
+                                                intent.putExtra("ROLE",type);
+                                                startActivity(intent);
+                                            }
+                                            else
+                                            {
+                                                String type="Admin/Teacher";
+                                                Intent intent = new Intent(Register.this, ProfileActivity.class);
+                                                intent.putExtra("ROLE",type);
+                                                startActivity(intent);
+                                            }
                                             // dialog.cancel();
                                         }
                                     });
@@ -139,8 +159,21 @@ public class Register extends AppCompatActivity {
                                     "later",
                                     new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
-                                            Intent intent = new Intent(Register.this, MainActivity.class);
-                                            startActivity(intent) ;
+
+                                            if(roletpe.equals("Parent")) {
+                                                String type="Parent";
+                                                Intent intent = new Intent(Register.this, MainActivity.class);
+                                                intent.putExtra("ROLE",type);
+                                                startActivity(intent);
+                                            }
+                                            else
+                                            {
+                                                String type="Admin/Teacher";
+                                                Intent intent = new Intent(Register.this, MainActivity.class);
+                                                intent.putExtra("ROLE",type);
+                                                startActivity(intent);
+                                            }
+
                                             //dialog.cancel();
                                         }
                                     });

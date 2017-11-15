@@ -46,6 +46,7 @@
         android:layout_alignBottom="@+id/imageButton"
         android:layout_alignStart="@+id/imageButton"
         android:layout_marginStart="84dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,17 +79,7 @@
                 android:paddingRight="18dp"
                 android:weightSum="1">
 
-<EditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:layout_gravity="center"
-            android:inputType="textPersonName"
-            android:textColor="#FFFFFF"
-            android:gravity=""
-            android:padding="8dp"
-            android:hint="    CHILD DETAILS"
-            android:background="#AD1457"/>
+
 
 
                 <EditText
@@ -125,7 +116,7 @@
 
 
 
-        <EditText
+        <TextView
             android:id="@+id/editdate"
             android:layout_width="match_parent"
             android:layout_height="46dp"
@@ -139,25 +130,88 @@
 
 
         <EditText
-            android:id="@+id/editParentC"
+            android:id="@+id/editContacts"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:ems="10"
             android:background="@drawable/round"
             android:layout_marginBottom="10dp"
             android:inputType="textPersonName"
-            android:hint="     Parent cellphone number" />
+            android:hint="      cellphone number" />
 
                 <EditText
-                    android:id="@+id/editParentE"
+                    android:id="@+id/editemail"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="10"
                     android:background="@drawable/round"
 
                     android:inputType="textPersonName"
-                    android:hint="     Parent Email"
+                    android:hint="      Email"
              />
+
+
+
+                <EditText
+                    android:id="@+id/editgender"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="10"
+                    android:background="@drawable/round"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textPersonName"
+                    android:hint="     gender" />
+
+                <!--<EditText-->
+                    <!--android:id="@+id/editIdNumber"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="46dp"-->
+                    <!--android:ems="10"-->
+                    <!--android:background="@drawable/round"-->
+
+                    <!--android:inputType="textPersonName"-->
+                    <!--android:hint="     id number"-->
+                    <!--/>-->
+
+
+
+
+
+                <EditText
+                    android:id="@+id/editRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="10"
+                    android:background="@drawable/round"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textPersonName"
+                    android:hint="     Role" />
+
+                <!--<EditText-->
+                    <!--android:id="@+id/edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="46dp"-->
+                    <!--android:ems="10"-->
+                    <!--android:background="@drawable/round"-->
+
+                    <!--android:inputType="textPersonName"-->
+                    <!--android:hint="     Parent Email"-->
+                    <!--/>-->
+
+
+
+
+
+                <EditText
+                    android:id="@+id/editQualifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="10"
+                    android:background="@drawable/round"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textPersonName"
+                    android:hint="     qualification" />
+
 
 
                 <!--<Button-->

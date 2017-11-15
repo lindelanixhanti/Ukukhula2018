@@ -16,6 +16,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,50 +48,100 @@ public class MainActivity extends AppCompatActivity
     ListView listView;
 
     ProgressDialog pd;
+    FirebaseUser firebaserUser;
+    DatabaseReference userRef;
+    User user;
 
+    NavigationView navigationView;
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
+
+        firebaserUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
         listView = (ListView) findViewById(R.id.listImages);
 
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+         navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         imgList = new ArrayList<>();
 
-        pd = new ProgressDialog(this);
-        pd.setMessage(" please wait ....");
-        pd.show();
+//        pd = new ProgressDialog(this);
+//        pd.setMessage(" please wait ....");
+//        pd.show();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("imagess");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                pd.dismiss();
+        if( firebaserUser != null) {
+            String uuid = firebaserUser.getUid();
 
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Log.i(" AVIWE", dataSnapshot.toString());
-                    ImagePojo imagePojo = (ImagePojo) dataSnapshot1.getValue(ImagePojo.class);
-                    imgList.add(imagePojo);
+            userRef = FirebaseDatabase.getInstance().getReference().child("users").child(uuid);
+            userRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    user = dataSnapshot.getValue(User.class);
+                    Log.i("Dimplez" , dataSnapshot.toString());
 
+                    if("Admin/Teacher".equals(user.getUser_role()))
+                    {
+
+                    }
+                    else
+                    {
+                        navigationView.getMenu().removeItem(R.id.nav_teacher);
+                        navigationView.getMenu().removeItem(R.id.nav_Children);
+                        navigationView.getMenu().removeItem(R.id.nav_classes);
+                    }
                 }
 
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-                ImageAdapter adapter = new ImageAdapter(MainActivity.this, R.layout.activity_gallarylist, imgList);
-                listView.setAdapter(adapter);
+                }
+            });
+
+        } else {
+            // Go to Login screen because we don't have a session.
+            Log.i("Dimplez", "We don't know what happened");
+        }
 
 
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                pd.dismiss();
-
-            }
-        });
+        databaseReference = FirebaseDatabase.getInstance().getReference("imagess");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                pd.dismiss();
+//
+//                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+//                    Log.i(" AVIWE", dataSnapshot.toString());
+//                    ImagePojo imagePojo = (ImagePojo) dataSnapshot1.getValue(ImagePojo.class);
+//                    imgList.add(imagePojo);
+//
+//                }
+//
+//
+//                ImageAdapter adapter = new ImageAdapter(MainActivity.this, R.layout.activity_gallarylist, imgList);
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                pd.dismiss();
+//
+//            }
+//        });
 //
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -100,14 +152,7 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override

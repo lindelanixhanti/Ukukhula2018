@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageButton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/factfile" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_alignStart="@+id/imageButton"
+        android:layout_marginStart="84dp"
+        android:clickable="true"
+        android:elevation="8dp"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:text="Admin/Teacher"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -93,7 +127,7 @@
                     android:hint="      Password"
                     android:inputType="textPersonName" />
 
-                <Spinner
+                <EditText
                     android:id="@+id/editgender"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
@@ -101,8 +135,7 @@
                     android:ems="10"
 
                     android:hint="      Gender"
-                    android:inputType="textPersonName"
-                    android:spinnerMode="dialog" />
+                    android:inputType="textPersonName" />
 
                 <Spinner
                     android:id="@+id/className"
@@ -147,3 +180,7 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+
+</RelativeLayout>
+

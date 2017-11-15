@@ -1,7 +1,10 @@
 package za.co.codetribe.ukukhula.AdminProfile;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,8 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -36,6 +41,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,18 +49,22 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import za.co.codetribe.ukukhula.MainActivity;
 import za.co.codetribe.ukukhula.R;
+import za.co.codetribe.ukukhula.User;
+import za.co.codetribe.ukukhula.notifications.Eventhelper;
 
-
+import static android.R.attr.value;
 
 
 public class ProfileActivity extends AppCompatActivity {
 
-    EditText name, surname, address, gender, parentName, parentContact, dateofbirth, parentEmail ,type;
-    String nam, surnam, addres, gende, parentNam, parentContac, dateofbirt, email;
+    EditText name, surname, address, gender, contacts, parentEmail ,type,qualification;
+    TextView dateSelected,dateofbirth;
+    String nam, surnam, addres, gende, types, contact, dateSelecte, email,qualificatio;
     Button save;
     CircleImageView profilePic;
     ImageView profileImgPallete;
     Button view;
+    String value;
 
     //authntification fields
 
@@ -62,6 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser user;
     // FirebaseAuth.AuthStateListener mAuthListerner;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 //FIREBASE DATABASE FIELDS
     //DatabaseReference userDatabase;
@@ -107,11 +118,46 @@ public class ProfileActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.editname);
         surname = (EditText) findViewById(R.id.editsurname);
         address = (EditText) findViewById(R.id.editaddress);
-//        gender = (EditText) findViewById(R.id.editgender);
-//        parentName = (EditText) findViewById(R.id.editParentN);
-        parentContact = (EditText) findViewById(R.id.editParentC);
-        parentEmail = (EditText) findViewById(R.id.editParentE);
-        dateofbirth = (EditText) findViewById(R.id.editdate);
+        type = (EditText) findViewById(R.id.editRole);
+        contacts = (EditText) findViewById(R.id.editContacts);
+        parentEmail = (EditText) findViewById(R.id.editemail);
+        dateSelected= (TextView) findViewById(R.id.editdate);
+        gender=(EditText) findViewById(R.id.editgender);
+        qualification=(EditText) findViewById(R.id.editQualifications);
+
+        //get intent
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            value = bundle.getString("ROLE");
+        }
+
+
+//to select the date
+        dateSelected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar= Calendar.getInstance();
+                int year=calendar.get(Calendar.YEAR);
+                int day=calendar.get(Calendar.DAY_OF_MONTH);
+                int month=calendar.get(Calendar.MONTH);
+
+                DatePickerDialog dialog= new DatePickerDialog(ProfileActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,mDateSetListener,year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable((Color.TRANSPARENT)));
+                dialog.show();
+
+
+            }
+        });
+        mDateSetListener= new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int date) {
+
+                month=month+1;
+                String selected= month + "/" + date +"  " + year;
+
+          dateSelected.setText(selected);
+            }
+        };
 
 
         user = mAuth.getCurrentUser();
@@ -126,22 +172,29 @@ public class ProfileActivity extends AppCompatActivity {
 
             //LearnerProfile parentProfile =
             parentEmail.setText(user.getEmail());
+            type.setText(value);
 
 
 
-            final DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("Admin").child(user.getUid());
+            final DatabaseReference database = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
             database.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.i("Ygritte", "Parent : " + dataSnapshot.toString());
                     if (dataSnapshot.getValue() != null) {
 
-                        ParentProfile parentProfile = dataSnapshot.getValue(ParentProfile.class);
-                        name.setText(parentProfile.getNames());
-                        surname.setText(parentProfile.getSurname());
-                        address.setText(parentProfile.getAddress());
-                        parentContact.setText(parentProfile.getContact_number());
-                        dateofbirth.setText(parentProfile.getDate_of_birth());
+                        //ParentProfile parentProfile = dataSnapshot.getValue(ParentProfile.class);
+                        User user = dataSnapshot.getValue(User.class);
+                        // address,className,contacts,email,gender,id_number,name,password,qualifications,surname,user_role
+                        name.setText((user.getName()));
+                        surname.setText(user.getSurname());
+                        address.setText(user.getAddress());
+                        contacts.setText(user.getContacts());
+                        gender.setText(user.getGender());
+                        qualification.setText(user.getQualifications());
+                        dateSelected.setText(user.getDateofbirth());
+                        type.setText(value);
+
 
                     }
                 }
@@ -218,15 +271,20 @@ public class ProfileActivity extends AppCompatActivity {
             nam = name.getText().toString().trim();
             surnam = surname.getText().toString().trim();
             addres = address.getText().toString();
-            parentContac = parentContact.getText().toString();
-            dateofbirt = dateofbirth.getText().toString();
-            String type = "admin";
+            contact = contacts.getText().toString();
+            gende = gender.getText().toString();
+            dateSelecte = dateSelected.getText().toString();
+            qualificatio = qualification.getText().toString();
+            type.getText().toString();
 
-            ParentProfile parentProfile = new ParentProfile(nam, surnam, parentContac, dateofbirt, addres,type);
-            Map<String, Object> parentProfileValues = parentProfile.toMap();
+
+
+                            //address,contacts,email,gender,name,dateofbirth,qualifications,surname,user_role
+            User users = new User( addres,contact,email,gende,nam,dateSelecte,qualificatio,surnam,value);
+            Map<String, Object> parentProfileValues = users.toMap();
             String userId = user.getUid();
             Map<String, Object> childUpdates = new HashMap<>();
-            childUpdates.put("/Admin/" + userId, parentProfileValues);
+            childUpdates.put("/users/" + userId, parentProfileValues);
             mDatabase.updateChildren(childUpdates);
 
             Toast.makeText(ProfileActivity.this, "data saved ", Toast.LENGTH_LONG).show();
